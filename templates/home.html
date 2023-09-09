@@ -2,45 +2,32 @@
 <html>
   <head>
     <title>Jovian Career</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
-      h1 {
-        font-size: 40px;
-        font-family: Arial;
-        font-weight: normal;
-        color:rgb(50,50,50);
-        text-align: center;
-      }
-      p {
-        font-family: Arial;
-        color:rgb(80,80,80);
-      }
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100,100,100);
-        text-align: center;
-      }
-      #banner1 {
+      #banner {
          width:100%;
-        height:300px;
+        height:360px;
         object-fit: cover;
-      }
-      #container {
-        max-width: 720px;
-        margin: 0 auto 0 auto;
       }
     </style>
   </head>
   <body>
-    <div id="container">
-       <h1>Jovian Careers</h1>
-        <img id="banner1" src="https://flask-tutorial-1--ccode25.repl.co/static/banner1.jpg">
-       <h2>About Jovian</h2>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu volutpat odio facilisis mauris sit amet massa. In mollis nunc sed id semper risus in. Facilisis gravida neque convallis a cras semper auctor neque. Odio facilisis mauris sit amet massa vitae tortor.</p>
-      <h2>Open Positions</h2>
-        <p>TODO - Show the jobs here</p>
-        <div style="text-align:center;">
-          <button>Contact us</button>
+    <div class="container">
+       <h1 class="text-center mt-4">Jovian Careers</h1>
+        <img class="img-fluid mt-4" id="banner" src="https://flask-tutorial-1--ccode25.repl.co/static/banner1.jpg">
+       <h2 class="text-center mt-4">About Jovian</h2>
+         <p class="lead mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu volutpat odio facilisis mauris sit amet massa. In mollis nunc sed id semper risus in. Facilisis gravida neque convallis a cras semper auctor neque. Odio facilisis mauris sit amet massa vitae tortor.</p>
+      <h2 class="text-center">Open Positions</h2>
+        <div>
+          {% for job in jobs %}
+            {% include 'jobitem.html' %}
+          {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+          <button class="btn btn-primary btn">Contact us</button>
+            <p class="mt-4">Copy right 2023</p>
         </div>
     </div>
   </body>
